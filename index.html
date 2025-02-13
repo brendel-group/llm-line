@@ -7,26 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Primary Meta Tags -->
-    <title>Provable Compositional Generalization for Object-Centric Learning</title>
-    <meta name="title" content="Provable Compositional Generalization for Object-Centric Learning">
+    <title>LLMs on the Line: Data Determines Loss-To-Loss Scaling Laws</title>
+    <meta name="title" content="LLMs on the Line: Data Determines Loss-To-Loss Scaling Laws">
     <meta name="description"
-        content="Learning representations that generalize to novel compositions of known concepts is crucial for bridging the gap between human and machine perception. One prominent effort is learning object-centric representations, which are widely conjectured to enable compositional generalization. Yet, it remains unclear when this conjecture will be true, as a principled theoretical or empirical understanding of compositional generalization is lacking. In this work, we investigate when compositional generalization is guaranteed for object-centric representations through the lens of identifiability theory. We show that autoencoders that satisfy structural assumptions on the decoder and enforce encoder-decoder consistency will learn object-centric representations that provably generalize compositionally. We validate our theoretical result and highlight the practical relevance of our assumptions through experiments on synthetic image data.">
+        content="Scaling laws guide the development of large language models (LLMs) by offering estimates for the optimal balance of model size, tokens, and compute. More recently, loss-to-loss scaling laws that relate losses across pretraining datasets and downstream tasks have emerged as a powerful tool for understanding and improving LLM performance. In this work, we investigate which factors most strongly influence loss-to-loss scaling. Our experiments reveal that the pretraining data and tokenizer determine the scaling trend. In contrast, model size, optimization hyperparameters, and even significant architectural differences, such as between transformer-based models like Llama and state-space models like Mamba, have limited impact. Consequently, practitioners should carefully curate suitable pretraining datasets for optimal downstream performance, while architectures and other settings can be freely optimized for training efficiency.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://brendel-group.github.io/objects-compositional-generalization">
-    <meta property="og:title" content="Provable Compositional Generalization for Object-Centric Learning">
+    <meta property="og:url" content="https://brendel-group.github.io/llm-line">
+    <meta property="og:title" content="LLMs on the Line: Data Determines Loss-To-Loss Scaling Laws">
     <meta property="og:description"
-        content="Learning representations that generalize to novel compositions of known concepts is crucial for bridging the gap between human and machine perception. One prominent effort is learning object-centric representations, which are widely conjectured to enable compositional generalization. Yet, it remains unclear when this conjecture will be true, as a principled theoretical or empirical understanding of compositional generalization is lacking. In this work, we investigate when compositional generalization is guaranteed for object-centric representations through the lens of identifiability theory. We show that autoencoders that satisfy structural assumptions on the decoder and enforce encoder-decoder consistency will learn object-centric representations that provably generalize compositionally. We validate our theoretical result and highlight the practical relevance of our assumptions through experiments on synthetic image data.">
-    <meta property="og:image" content="https://brendel-group.github.io/objects-compositional-generalization/img/fig1_v12.svg">
+        content="Scaling laws guide the development of large language models (LLMs) by offering estimates for the optimal balance of model size, tokens, and compute. More recently, loss-to-loss scaling laws that relate losses across pretraining datasets and downstream tasks have emerged as a powerful tool for understanding and improving LLM performance. In this work, we investigate which factors most strongly influence loss-to-loss scaling. Our experiments reveal that the pretraining data and tokenizer determine the scaling trend. In contrast, model size, optimization hyperparameters, and even significant architectural differences, such as between transformer-based models like Llama and state-space models like Mamba, have limited impact. Consequently, practitioners should carefully curate suitable pretraining datasets for optimal downstream performance, while architectures and other settings can be freely optimized for training efficiency.">
+    <meta property="og:image" content="https://brendel-group.github.io/llm-line/img/fig1.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://brendel-group.github.io/objects-compositional-generalization">
-    <meta property="twitter:title" content="Provable Compositional Generalization for Object-Centric Learning">
+    <meta property="twitter:url" content="https://brendel-group.github.io/llm-line">
+    <meta property="twitter:title" content="LLMs on the Line: Data Determines Loss-To-Loss Scaling Laws">
     <meta property="twitter:description"
-        content="Learning representations that generalize to novel compositions of known concepts is crucial for bridging the gap between human and machine perception. One prominent effort is learning object-centric representations, which are widely conjectured to enable compositional generalization. Yet, it remains unclear when this conjecture will be true, as a principled theoretical or empirical understanding of compositional generalization is lacking. In this work, we investigate when compositional generalization is guaranteed for object-centric representations through the lens of identifiability theory. We show that autoencoders that satisfy structural assumptions on the decoder and enforce encoder-decoder consistency will learn object-centric representations that provably generalize compositionally. We validate our theoretical result and highlight the practical relevance of our assumptions through experiments on synthetic image data.">
-    <meta property="twitter:image" content="https://brendel-group.github.io/objects-compositional-generalization/img/fig1_v12.svg">
+        content="Scaling laws guide the development of large language models (LLMs) by offering estimates for the optimal balance of model size, tokens, and compute. More recently, loss-to-loss scaling laws that relate losses across pretraining datasets and downstream tasks have emerged as a powerful tool for understanding and improving LLM performance. In this work, we investigate which factors most strongly influence loss-to-loss scaling. Our experiments reveal that the pretraining data and tokenizer determine the scaling trend. In contrast, model size, optimization hyperparameters, and even significant architectural differences, such as between transformer-based models like Llama and state-space models like Mamba, have limited impact. Consequently, practitioners should carefully curate suitable pretraining datasets for optimal downstream performance, while architectures and other settings can be freely optimized for training efficiency.">
+    <meta property="twitter:image" content="https://brendel-group.github.io/llm-line/img/fig1.svg">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -108,7 +108,7 @@
         }
     </style>
 
-    <title>Provable Compositional Generalization for Object-Centric Learning</title>
+    <title>LLMs on the Line: Data Determines Loss-To-Loss Scaling Laws</title>
 </head>
 
 <body>
@@ -118,11 +118,17 @@
             </div>
             <div class="col-sm-8" id="main-content">
                 <div class="row text-center my-5" id="#">
-                    <h1>Provable Compositional Generalization for Object-Centric Learning</h1>
+                    <h1>LLMs on the Line: Data Determines Loss-To-Loss Scaling Laws</h1>
                 </div>
 
                 <!-- Begin author list-->
                 <div class="row text-center mb-4">
+                    <div class="col-sm-4 mb-4">
+                        Prasanna Mayilvahanan*
+                        <a href="mailto:attila.juhos@tuebingen.mpg.de"><i class="far fa-envelope"></i></a>
+                        <a href="https://twitter.com/JuhosAttila"><i class="fab fa-x-twitter"></i></a><br>
+                        MPI-IS, University of Tübingen, Tübingen AI Center
+                    </div>
                     <div class="col-sm-4 mb-4">
                         Thaddäus Wiedemer*
                         <a href="mailto:thaddaeus.wiedemer@gmail.com"><i class="far fa-envelope"></i></a>
@@ -130,22 +136,16 @@
                         MPI-IS, University of Tübingen, Tübingen AI Center
                     </div>
                     <div class="col-sm-4 mb-4">
-                        Jack Brady*
-                        <a href="mailto:jack.brady@tuebingen.mpg.de"><i class="far fa-envelope"></i></a>
-                        <a href="https://twitter.com/jackhb98"><i class="fab fa-x-twitter"></i></a><br>
-                        MPI-IS, University if Tübingen, Tübingen AI Center
-                    </div>
-                    <div class="col-sm-4 mb-4">
-                        Alexander Panfilov*
+                        Sayak Mallick*
                         <a href="mailto:kotekjedi@gmail.com"><i class="far fa-envelope"></i></a>
                         <a href="https://twitter.com/kotekjedi_ml"><i class="fab fa-x-twitter"></i></a><br>
                         University of Tübingen, MPI-IS, TÜbingen AI Center
                     </div>
                     <div class="col-sm-4 mb-4">
-                        Attila Juhos*
-                        <a href="mailto:attila.juhos@tuebingen.mpg.de"><i class="far fa-envelope"></i></a>
-                        <a href="https://twitter.com/JuhosAttila"><i class="fab fa-x-twitter"></i></a><br>
-                        MPI-IS, University of Tübingen, Tübingen AI Center
+                        Jack Brady*
+                        <a href="mailto:jack.brady@tuebingen.mpg.de"><i class="far fa-envelope"></i></a>
+                        <a href="https://twitter.com/jackhb98"><i class="fab fa-x-twitter"></i></a><br>
+                        MPI-IS, University if Tübingen, Tübingen AI Center
                     </div>
                     <div class="col-sm-4 mb-4">
                         Matthias Bethge
@@ -163,7 +163,7 @@
                 <div class="row text-center">
                     <div class="col-sm-4 mb-4 offset-sm-2">
                         <h4>
-                            <a href="https://arxiv.org/abs/2310.05327" target="_blank">
+                            <a href="https://arxiv.org/abs/xxxxxxxx" target="_blank">
                                 <i class="fas fa-file-alt"></i>
                                 Paper
                             </a>
@@ -171,7 +171,7 @@
                     </div>
                     <div class="col-sm-4 mb-4">
                         <h4>
-                            <a href="https://github.com/brendel-group/objects-compositional-generalization" target="_blank">
+                            <a href="https://github.com/brendel-group/llm-line" target="_blank">
                                 <i class="fab fa-github"></i>
                                 Code
                             </a>
@@ -183,7 +183,7 @@
                     <p>
                         <b>tl;dr:</b>
                         <span class="text-muted">
-                            We show theoretical conditions under which compositional generalization is guaranteed for object-centric representation learning.
+                            We investigate which factors most strongly influence loss-to-loss scaling.
                         </span>
                     </p>
                 </div>
@@ -199,7 +199,7 @@
                                 <span class="badge badge-pill badge-primary">Feb '24</span>
                             </td>
                             <td>
-                                Our paper was accepted as a <a href="https://openreview.net/forum?id=7VPTUWkiDQ" target="_blank">Oral at ICLR 2024</a>!
+                                Our paper was xxxxxx!
                             </td>
                         </tr>
                         <tr>
@@ -207,7 +207,7 @@
                                 <span class="badge badge-pill badge-primary">Oct '23</span>
                             </td>
                             <td>
-                                The pre-print is now available on <a href="https://arxiv.org/abs/2310.05327" target="_blank">arXiv</a>.
+                                The pre-print is now available on <a href="https://arxiv.org/abs/xxxxx" target="_blank">arXiv</a>.
                             </td>
                         </tr>
                     </table>
@@ -226,7 +226,7 @@
                 <div class="row mt-2">
                     <div class="col-12 collapse-container">
                         <p class="collapse" id="abstractText" aria-expanded="false">
-                            Learning representations that generalize to novel compositions of known concepts is crucial for bridging the gap between human and machine perception. One prominent effort is learning object-centric representations, which are widely conjectured to enable compositional generalization. Yet, it remains unclear when this conjecture will be true, as a principled theoretical or empirical understanding of compositional generalization is lacking. In this work, we investigate when compositional generalization is guaranteed for object-centric representations through the lens of identifiability theory. We show that autoencoders that satisfy structural assumptions on the decoder and enforce encoder-decoder consistency will learn object-centric representations that provably generalize compositionally. We validate our theoretical result and highlight the practical relevance of our assumptions through experiments on synthetic image data.
+                            Scaling laws guide the development of large language models (LLMs) by offering estimates for the optimal balance of model size, tokens, and compute. More recently, loss-to-loss scaling laws that relate losses across pretraining datasets and downstream tasks have emerged as a powerful tool for understanding and improving LLM performance. In this work, we investigate which factors most strongly influence loss-to-loss scaling. Our experiments reveal that the pretraining data and tokenizer determine the scaling trend. In contrast, model size, optimization hyperparameters, and even significant architectural differences, such as between transformer-based models like Llama and state-space models like Mamba, have limited impact. Consequently, practitioners should carefully curate suitable pretraining datasets for optimal downstream performance, while architectures and other settings can be freely optimized for training efficiency.
                         </p>
                        <a role="button" id="moreless" class="collapsed" data-toggle="collapse" href="#abstractText" aria-expanded="false" aria-controls="abstractText"></a>
                     </div>
@@ -353,8 +353,7 @@
                 <div class="row mt-2">
                     <div class="col-12 collapse-container">
                         <p class="collapse" id="acknowledgmentsText" aria-expanded="false">
-                            We thank (in alphabetical order): Andrea Dittadi, Egor Krasheninnikov, Evgenii Kortukov, Julius von Kügelgen, Prasanna Mayilvahannan, Roland Zimmermann, Sébastien Lachapelle, and Thomas Kipf for helpful insights and discussions.<br>
-                            This work was supported by the German Federal Ministry of Education and Research (BMBF): Tübingen AI Center, FKZ: 01IS18039A, 01IS18039B. WB acknowledges financial support via an Emmy Noether Grant funded by the German Research Foundation (DFG) under grant no. BR 6382/1-1 and via the Open Philantropy Foundation funded by the Good Ventures Foundation. WB is a member of the Machine Learning Cluster of Excellence, EXC number 2064/1 – Project number 390727645. This research utilized compute resources at the Tübingen Machine Learning Cloud, DFG FKZ INST 37/1057-1 FUGG.<br>
+                            We thank (in alphabetical order): xxxxxx
                             The authors thank the <a href="https://imprs.is.mpg.de/" target="_blank">International Max Planck Research School for Intelligent Systems (IMPRS-IS)</a> for supporting TW and AJ.
                         </p>
                        <a role="button" id="moreless" class="collapsed" data-toggle="collapse" href="#acknowledgmentsText" aria-expanded="false" aria-controls="acknowledgmentsText"></a>

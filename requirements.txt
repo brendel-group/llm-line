@@ -1,0 +1,10 @@
+torch --index-url https://download.pytorch.org/whl/cu117
+transformers>=4.1
+lm-eval
+mamba-ssm
+packaging
+ninja
+setuptools
+wheel
+protobuf
+sentencepiece

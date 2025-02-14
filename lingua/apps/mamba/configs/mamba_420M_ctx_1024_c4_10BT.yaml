@@ -1,0 +1,99 @@
+# Template config, need to change dump_dir, data.root_dir and tokenizer.path
+
+dump_dir: /is/cluster/fast/pmayilvahanan/lm_logs/lingua/mamba_420M_ctx_1024_c4_8.4BT/
+name: "mamba_420M"
+steps: 42_725
+probe_freq: null #100
+
+seed: 777
+optim:
+  lr: 3.0e-3
+  weight_decay: 0.033
+  warmup: 5000
+  lr_min_ratio: 0.000001
+  clip: 1.0
+
+distributed:
+  fsdp_type: full_shard
+  compile: true
+  model_dtype: bf16
+  matmul_allow_tf32: false
+  selective_activation_checkpointing: true
+  tp_size: 1
+
+model:
+  dim: 1024
+  n_heads: 16
+  n_groups: 1
+  state_dim: 128
+  conv_size: 2
+  n_layers: 24
+  dt_bias: false
+  D_has_head_dim: false
+  init_args:
+    A_init_min: 0.01
+    A_init_max: 2
+
+data:
+  root_dir: /fast/smallick/datasets/
+  sources:
+      c4_shuffled: 1.0
+  batch_size: 12
+  prefetch_size: 1024
+  seq_len: 1024
+  n_views: 2
+  load_async: true
+  add_bos: true
+  add_eos: true
+  tokenizer:
+    name: tiktoken
+    path: /tmp/tokenizers/original/tokenizer.model
+
+profiling:
+  run: true
+
+checkpoint:
+  dump:
+    every: 509
+    keep: 3
+  eval:
+    every: 509
+    keep: -1
+
+logging:
+  freq: 1
+
+eval:
+  harness:
+    compute_loss: true
+    tasks:
+      - hellaswag
+      - piqa
+      - winogrande
+      - arc_easy
+      - arc_challenge
+      - commonsense_qa
+      - openbookqa
+      - task: copa
+        dataset_kwargs:
+          trust_remote_code: true
+      - winogrande
+      - mmlu
+      - task: social_iqa
+        dataset_kwargs:
+          trust_remote_code: true
+  validation:
+    use_val_from_train_src: false
+    max_steps: 5000
+    root_dir: /fast/smallick/datasets/
+    sources:
+      - c4_shuffled
+      - pile_uc_shuffled
+      - fineweb_edu_100bt_shuffled
+      - refineweb_shuffled
+      - slimpajama_shuffled
+  generator:
+    compile_prefilling: false
+    reduce_generation_overhead: true
+    max_tokens: 16384
+    dtype: bf16

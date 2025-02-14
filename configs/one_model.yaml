@@ -1,0 +1,47 @@
+models:
+  - name: "EleutherAI/gpt-neox-20b"
+    cls: "hf" # lm_eval argument
+    batch_size: 10
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "472B tokens"
+  
+  - name: "EleutherAI/gpt-neo-1.3B"
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "472B tokens"
+
+  - name: "EleutherAI/gpt-neo-125m"
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "472B tokens"
+
+  - name: "EleutherAI/gpt-neo-2.7B"
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "472B tokens"
+
+  # GPT-J Models 
+  # this is probably incorrect
+  - name: "EleutherAI/gpt-j-6b"
+    cls: "hf" # lm_eval argument
+    batch_size: 10
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "402 tokens"

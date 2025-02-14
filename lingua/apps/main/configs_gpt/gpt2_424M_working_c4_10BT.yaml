@@ -1,0 +1,98 @@
+# Template config, need to change dump_dir, data.root_dir and tokenizer.path
+# model size: 416,834,560
+dump_dir: /is/cluster/fast/pmayilvahanan/lm_logs/lingua/gpt2_llama_module_working/gpt2_424M_working_c4_8.4BT/
+name: llama_416M
+steps: 18_310
+probe_freq: null
+seed: 777
+gc_collect_freq: 1000
+
+optim:
+  lr: 3e-3
+  weight_decay: 0.033
+  warmup: 1000
+  lr_min_ratio: 0.000001
+  clip: 1.0
+
+distributed:
+  fsdp_type: full_shard
+  compile: true
+  model_dtype: bf16
+  matmul_allow_tf32: false
+  selective_activation_checkpointing: false
+  tp_size: 1
+
+model:
+  dim: 1024
+  n_layers: 16
+  n_heads: 8
+  norm_type: layer_norm # layer_norm, rms_norm
+  attn_type: gpt  # gpt, llama
+  pos_embed_type: learned # rope, learned
+  ffn_activation: gelu # gelu, silu
+  dropout: 0.1  # Enable GPT-style dropout (0.0 for LLaMA style)
+  use_gpt_init: true  # Use GPT-style initialization (false for LLaMA style)
+  bias: false
+  weight_tying: false
+  llama_linear: false
+
+data:
+  root_dir: /fast/smallick/datasets/
+  sources:
+      c4_shuffled: 1.0
+  batch_size: 28
+  prefetch_size: 1024
+  seq_len: 2048
+  n_views: 2
+  load_async: true
+  add_bos: true
+  add_eos: true
+  tokenizer:
+    name: tiktoken
+    path: /tmp/tokenizers/original/tokenizer.model
+
+profiling:
+  run: false
+
+checkpoint:
+  dump:
+    every: 1089
+    keep: 3
+  eval:
+    every: 218
+    keep: -1
+
+logging:
+  freq: 1
+
+eval:
+  harness:
+    compute_loss: true
+    tasks:
+      - hellaswag
+      - piqa
+      - arc_easy
+      - arc_challenge
+      - commonsense_qa
+      - openbookqa
+      - task: copa
+        dataset_kwargs:
+          trust_remote_code: true
+      - winogrande
+      - mmlu
+      - task: social_iqa
+        dataset_kwargs:
+          trust_remote_code: true
+  validation:
+    use_val_from_train_src: false
+    max_steps: 5000
+    root_dir: /fast/smallick/datasets/
+    sources:
+      - c4_shuffled
+      - pile_uc_shuffled
+      - fineweb_edu_100bt_shuffled
+      - refineweb_shuffled
+      - slimpajama_shuffled
+  generator:
+    max_tokens: 16384
+    dtype: bf16

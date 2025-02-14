@@ -1,0 +1,404 @@
+models:
+  # The Pile Models
+  ## GPT Architecture
+  # GPT-NeoX Models
+  - name: "EleutherAI/gpt-neox-20b"
+    cls: "hf" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "472B tokens"
+  
+  - name: "EleutherAI/gpt-neo-1.3B"
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "472B tokens"
+
+  - name: "EleutherAI/gpt-neo-125m"
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "472B tokens"
+
+  - name: "EleutherAI/gpt-neo-2.7B"
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "472B tokens"
+
+  # GPT-J Models 
+  # this is probably incorrect
+  - name: "EleutherAI/gpt-j-6b"
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "402 tokens"
+
+  ## Pythia Models and Checkpoints
+  # Pythia 12B Checkpoints
+  - name: "EleutherAI/pythia-70m" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-160m" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-410m" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-1b" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-1.4b" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-2.8b" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-6.9b" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-12b" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+  
+  ## Mamba Architecture and Checkpoints
+  # Mamba 2.8B Checkpoints
+  - name: "state-spaces/mamba-130m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba-370m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+  
+  - name: "state-spaces/mamba-790m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba-1.4b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba-2.8b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba-2.8b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-130m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-370m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-780m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-1.3b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-2.7b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-001000-2BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-005000-10BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-010000-21BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-015000-31BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-020000-42BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-025000-52BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-030000-63BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-035000-73BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-040000-84BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-046000-96BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-050000-105BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-055000-115BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-060000-126BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-065000-136BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-070000-147BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-075000-157BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    revision: "step-080000-168BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-the-pile" 
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B"

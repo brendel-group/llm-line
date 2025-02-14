@@ -1,0 +1,9 @@
+models:
+  - name: "state-spaces/mamba-2.8b-slimpj"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 500
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "SlimPajama"
+    dataset_version: "v1"
+    dataset_size: "600B tokens" 

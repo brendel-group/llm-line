@@ -1,0 +1,57 @@
+models:
+  # C4 Dataset Models
+  ## T5 Architecture (750B tokens)
+  - name: "google/t5-v1_1-small"  # 60M parameters
+    cls: "hf" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "T5"
+    dataset: "C4"
+    dataset_version: "v1"
+    dataset_size: "34B tokens"
+
+  - name: "google/t5-v1_1-base"  # 220M parameters
+    cls: "hf" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "T5"
+    dataset: "C4"
+    dataset_version: "v1"
+    dataset_size: "34B tokens"
+
+  - name: "google/t5-v1_1-large"  # 770M parameters
+    cls: "hf" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "T5"
+    dataset: "C4"
+    dataset_version: "v1"
+    dataset_size: "34B tokens"
+
+  - name: "google/t5-v1_1-xl"  # 3B parameters
+    cls: "hf" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "T5"
+    dataset: "C4"
+    dataset_version: "v1"
+    dataset_size: "34B tokens"
+
+  - name: "google/t5-v1_1-xxl"  # 11B parameters
+    cls: "hf" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "T5"
+    dataset: "C4"
+    dataset_version: "v1"
+    dataset_size: "34B tokens"
+
+  ## UL2 Architecture (1T tokens)
+  - name: "google/ul2" 
+    cls: "hf" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "T5"
+    dataset: "C4"
+    dataset_version: "v1"
+    dataset_size: "1T tokens" 

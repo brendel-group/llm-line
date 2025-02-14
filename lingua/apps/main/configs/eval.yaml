@@ -1,0 +1,35 @@
+name: "debug_evals"
+ckpt_dir: 
+dump_dir:
+metric_log_dir: /is/cluster/fast/pmayilvahanan/lm_logs/lingua/llama_416M_fw_edu_50BT/
+generator:
+  max_tokens: 16384
+  dtype: bf16
+  temperature: 1.0
+harness:
+  compute_loss: true
+  tasks:
+    - hellaswag
+    - piqa
+    - winogrande
+    - arc_easy
+    - arc_challenge
+    - commonsense_qa
+    - task: copa
+      dataset_kwargs:
+        trust_remote_code: true
+    - winogrande
+    - mmlu
+    - task: social_iqa
+      dataset_kwargs:
+        trust_remote_code: true
+validation:
+  use_val_from_train_src: false
+  max_steps: 5000
+  root_dir: /fast/smallick/datasets/
+  sources:
+    - c4_shuffled
+    - pile_uc_shuffled
+    - fineweb_edu_100bt_shuffled
+    - refineweb_shuffled
+    - slimpajama_shuffled

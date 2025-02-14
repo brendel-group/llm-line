@@ -1,0 +1,73 @@
+## BLOOM Architecture
+  - name: "bigscience/bloom-560m"
+    cls: "hf" # lm_eval argument
+    batch_size: 16
+    device: "cuda"
+    architecture: "BLOOM"
+    dataset: "ROOTS"
+    dataset_version: "v1"
+    dataset_size: "341B tokens"
+
+  - name: "bigscience/bloom-1b1"
+    cls: "hf" # lm_eval argument
+    batch_size: 8
+    device: "cuda"
+    architecture: "BLOOM"
+    dataset: "ROOTS"
+    dataset_version: "v1"
+    dataset_size: "341B tokens"
+
+  - name: "bigscience/bloom-1b7"
+    cls: "hf" # lm_eval argument
+    batch_size: 8
+    device: "cuda"
+    architecture: "BLOOM"
+    dataset: "ROOTS"
+    dataset_version: "v1"
+    dataset_size: "341B tokens"
+
+  - name: "bigscience/bloom-3b"
+    cls: "hf" # lm_eval argument
+    batch_size: 4
+    device: "cuda"
+    architecture: "BLOOM"
+    dataset: "ROOTS"
+    dataset_version: "v1"
+    dataset_size: "341B tokens"
+
+  - name: "bigscience/bloom-7b1"
+    cls: "hf" # lm_eval argument
+    batch_size: 4
+    device: "cuda"
+    architecture: "BLOOM"
+    dataset: "ROOTS"
+    dataset_version: "v1"
+    dataset_size: "341B tokens"
+
+    ## OPT Architecture
+  - name: "facebook/opt-125m"
+    cls: "hf" # lm_eval argument
+    batch_size: 32
+    device: "cuda"
+    architecture: "OPT"
+    dataset: "Mixed: BookCorpus + CC-Stories + The Pile + Pushshift.io + CCNewsV2"
+    dataset_version: "v1"
+    dataset_size: "180B tokens"
+
+  - name: "facebook/opt-1.3b"
+    cls: "hf" # lm_eval argument
+    batch_size: 8
+    device: "cuda"
+    architecture: "OPT"
+    dataset: "Mixed: BookCorpus + CC-Stories + The Pile + Pushshift.io + CCNewsV2"
+    dataset_version: "v2"
+    dataset_size: "180B tokens"
+
+  - name: "facebook/opt-2.7b"
+    cls: "hf" # lm_eval argument
+    batch_size: 4
+    device: "cuda"
+    architecture: "OPT"
+    dataset: "Mixed: BookCorpus + CC-Stories + The Pile + Pushshift.io + CCNewsV2"
+    dataset_version: "v2"
+    dataset_size: "180B tokens"

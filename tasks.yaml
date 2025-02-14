@@ -1,0 +1,48 @@
+task_configs:
+  piqa:
+    shots: [0]
+  social_iqa:
+    shots: [0]
+  commonsense_qa:
+    shots: [0]  # Will evaluate with both 0 and 10 shots
+  copa:
+    shots: [0]
+  hellaswag:
+    shots: [0]
+  arc_easy:
+    shots: [0]
+  arc_challenge:
+    shots: [0]
+  openbookqa:
+    shots: [0]
+  mmlu:
+    shots: [0]
+  winogrande:
+    shots: [0]
+
+validation_configs:
+  c4:
+    path: "/fast/smallick/datasets/c4_shuffled/c4.val.jsonl"
+    batch_size: 50
+    max_seq_len: 2048
+    max_steps: 5000
+  fineweb_edu_100bt:
+    path: "/fast/smallick/datasets/fineweb_edu_100bt_shuffled/fineweb_edu.val.jsonl"
+    batch_size: 50
+    max_seq_len: 2048
+    max_steps: 5000
+  pile_uc:
+    path: "/fast/smallick/datasets/pile_uc_shuffled/pile_uc.val.jsonl"
+    batch_size: 50
+    max_seq_len: 2048
+    max_steps: 5000
+  refineweb:
+    path: "/fast/smallick/datasets/refineweb_shuffled/refineweb.val.jsonl"
+    batch_size: 50
+    max_seq_len: 2048
+    max_steps: 5000
+  slimpajama_shuffled:
+    path: "/fast/smallick/datasets/slimpajama_shuffled/slimpajama.val.jsonl"
+    batch_size: 16
+    max_seq_len: 2048
+    max_steps: 5000

@@ -1,0 +1,73 @@
+models:
+  ## Pythia Models and Checkpoints  # Pythia 12B Checkpoints
+  - name: "EleutherAI/pythia-70m-deduped" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile deduped"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-160m-deduped" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile deduped"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-410m-deduped" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile deduped"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-1b-deduped" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile deduped"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-1.4b-deduped" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile deduped"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-2.8b-deduped" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile deduped"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-6.9b-deduped" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile deduped"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "EleutherAI/pythia-12b" 
+    cls: "hf" # lm_eval argument
+    batch_size: 100
+    device: "cuda"
+    architecture: "GPT"
+    dataset: "The Pile deduped"
+    dataset_version: "v1"
+    dataset_size: "300B"

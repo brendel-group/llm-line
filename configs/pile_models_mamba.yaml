@@ -1,0 +1,93 @@
+models:
+  # The Pile Models 
+  ## Mamba Architecture and Checkpoints
+  # Mamba 2.8B Checkpoints
+  - name: "state-spaces/mamba-130m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba-370m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+  
+  - name: "state-spaces/mamba-790m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba-1.4b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba-2.8b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-130m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-370m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-780m"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-1.3b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 
+
+  - name: "state-spaces/mamba2-2.7b"
+    cls: "mamba_ssm" # lm_eval argument
+    batch_size: 50
+    device: "cuda"
+    architecture: "Mamba2"
+    dataset: "The Pile"
+    dataset_version: "v1"
+    dataset_size: "300B tokens" 

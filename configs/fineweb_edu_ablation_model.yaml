@@ -1,0 +1,179 @@
+models:
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-002000-4BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-010000-21BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-020000-42BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-030000-63BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-040000-84BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-050000-105BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-060000-126BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-070000-147BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-080000-168BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-090000-189BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-100000-210BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-110000-231BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-120000-252BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-130000-273BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-140000-294BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-150000-315BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    revision: "step-160000-336BT"
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B"
+
+  - name: "HuggingFaceFW/ablation-model-fineweb-edu" 
+    cls: "hf"
+    batch_size: 100
+    device: "cuda"
+    architecture: "llama"
+    dataset: "FineWeb-EDU"
+    dataset_version: "v1"
+    dataset_size: "300B" 

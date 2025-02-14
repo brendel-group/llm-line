@@ -232,26 +232,20 @@
                 <div class="row mt-2 row-dense">
                     <div class="col-12">
                         <p>
-                            Object-centric representations encode each object in a sence in a separate slot.
-                            Because of this, they are thought to generalize compositionlly, which means an object-centric model should be able to extract the correct representation for unseen combinations of observed objects.
-                            However, in practice, when we train an object-centric autoencoder on a training set that only contains some object combinations, we find that the model performs well for seen combinations, but not for unseen ones.
+                            We make three main observations, illustrated in Fig. 1:
+                                1. LLMs’ loss-to-loss scaling consistently follows shifted power laws.
+                                2. Pretraining data and tokenizer are the most salient factors for these scaling laws.
+                                3. In contrast, architecture plays a minor role, while model size, context length, and optimizer settings have negligible impact on loss-to-loss scaling.
                         </p>
                         <p>   
-                            We pose compositional generalization as a slot identifiability problem: Is the model able to reconstruct the ground-truth slot on the training set?
-                            If so, does this ability generalize to unseen combinations of objects?
-                        </p>
-                        <p>
-                            We show that if the training set is chosen correctly, if the decoder of the model is additive, and if we train with an additional loss term that we dub <em>compositional consistency loss</em>, the model generalizes compositionally in this sense.
+                            Further, we put our observations in the context of downstream scaling laws and discuss the relationship between loss-to-loss and compute-to-loss scaling laws. Our results indicate that different LLM architectures might encode very similar inductive biases, freeing practitioners to optimize architectures for training efficiency without adversely affecting downstream scaling laws.
                         </p>
                         <div class="d-flex justify-content-center">
                             <img src="img/fig1.png" class="img-fluid" style="max-width: 100%;"/>
                         </div>
                         <small class="text-muted">
                             <p>
-                                We understand compositional generalization in object-centric learning as the ability of a model to represent the objects in a scene in distinct slots, even for unseen object combinations.
-                                By plotting the reconstruction error over the entire domain, we see that an additive decoder by itself generates valid images within and outside of the training set, that is, it generalizes (A).
-                                But put together with the encoder, the reconstruction error shoots up outside of the training domain—the model is unable to generalize (B).
-                                Only if we add our proposed <em>compositional consistency</em> objective that aligns the encoder with the decoder is the entire mdoel able to generalize (C).
+                                xxxx
                             </p>
                         </small>
                     </div>
@@ -263,21 +257,14 @@
                 <div class="row mt-2 row-dense">
                     <div class="col-12">
                         <p>
-                            We start from a result from <a href="https://brendel-group.github.io/objects-identifiability/" data-toggle="tooltip" title data-original-title="Brady et al. 2023. Provably Learning Object-Centric Representations.">our earlier work</a> that shows that a model can correctly identify the slots of a assumed ground-truth data-generating process (that is, it can learn object-centric representations) if the model data-generation process is <em>compositional</em> and <em>irreducible</em> (both temrs introduced in our earlier work) and the model is trained on the entire domain.
-                            From there, we take four steps to arrive at our final result:
+                            Our study investigates how different design choices impact loss-to-loss scaling laws in LLMs. Using over 6,000 model checkpoints, we conduct controlled interventions by varying factors such as pretraining data, tokenizer, architecture, model size, and optimization settings. By analyzing the resulting changes in train-to-test loss scaling, we uncover key insights into what truly drives downstream performance. Contrary to expectations, we find that pretraining dataset composition has the most significant impact, while even major architectural differences—such as switching from transformers to state-space models—yield minimal changes in scaling behavior. These findings suggest that rather than focusing on new model architectures, researchers and practitioners should prioritize refining pretraining data selection to achieve optimal performance.
                         </p>
                         <div class="d-flex justify-content-center">
-                            <img src="img/fig2_v10.svg" class="img-fluid" style="max-width: 100%;"/>
+                            <img src="img/fig2.png" class="img-fluid" style="max-width: 100%;"/>
                         </div>
                         <ol>
-                            <li>We assume all the training data is generated from a <em>slot-supported subset</em> of the data domain, which is any subset that contains all variations of each individual object, but not necessarily all combinations of all objects.</li>
-                            <li>We extend our earlier result to show that a <em>compositional</em> autoencoder trained via a reconstruction objective can still identify the ground-truth slots on this training domain if the slot-supported subset is also convex. Note that the recovered training subset of the latent space (blue) is not exactly the same as the ground-truth, since the model recovers it only up to some permissible ambiguities.</li>
-                            <li>Since the model recovered the individual slots, we can simply recombine them to obtain unseen combinations of objects in the model's latent space. We show that if the decoder is additive, its reconstructions of these unseen combinations correspond exactly to images of unseen object combinations.</li>
-                            <li>However, for unseen object combinations, the encoder initially does not produce representations that can be expressed by a recombination of slots in the models latent space. We therefore need to align the encoder output with the expected input to the decoder. We achieve this via our proposed <em>compositional consistency loss</em>.</li>
+                            xxxx    
                         </ol>
-                        <p>
-                            We arrive at a model whose representations slot-identify the ground-truth latent space, even for unseen combinations of objects.
-                        </p>
                     </div>
                 </div>
 
@@ -288,28 +275,19 @@
                 <div class="row mt-2 row-dense">
                     <div class="col-12">
                         <p>
-                            From an implementation perspective, our biggest contribution is the compositional consistency loss that is included as an additional training objective to the default reconstruction loss.
-                            We can implement by taking the model's latent representation of the batch during the forward pass, randomly recombining slots between samples, and then applying the decoder and encoder to it. The resulting latent representation of each sample should be consistent with the recombination of latents, which we can measure, e.g., via a L2-loss.
-                        </p>
-                        <p>
-                            In latent space, recombining the slots of two random samples will most likely lead to a combination of slots that is not part of the training domain. The decoder can produce a valid image of this slot combination since it is additive and therefore invariant to the order and combination of slots.
+                            Traditionally, LLM development has placed heavy emphasis on architectural improvements and model scaling strategies. However, our research demonstrates that even drastically different architectures, such as LLaMA (a transformer-based model) and Mamba (a state-space model), exhibit nearly identical loss-to-loss scaling when trained on the same data. Meanwhile, changing the pretraining dataset leads to significant shifts in the scaling behavior, meaning that dataset curation is a far more influential lever for improving downstream performance. These insights suggest that practitioners should rethink their optimization strategies—prioritizing high-quality, well-curated datasets over iterative model modifications.
                         </p>
                         <div class="d-flex justify-content-center">
-                            <img src="img/fig3_v6.svg" class="img-fluid" style="max-width: 100%;"/>
+                            <img src="img/fig3.png" class="img-fluid" style="max-width: 100%;"/>
                         </div>
                         <small class="text-muted">
-                            The compositional consistency loss enforces cycle-consistency in the model's latent space after slot-wise recombinations, similar to the cycle-consistency in image space enforced by the default reconstruction loss (left).
-                            Most recombinations of slots between samples in a batch correspond to object combinations outside of the training domain (right).
+                            xxxx
                         </small>
-                        <p>
-                            We can show that the model slot-identifies the ground truth exactly when both losses are minimized.
-                            Additionally, we do not explicitly need to optimize for compositionality of the decoder, as this property is implicitly enforced during training.
-                        </p>
                         <div class="d-flex justify-content-center">
-                            <img src="img/fig4_v5.svg" class="img-fluid" style="max-width: 100%;"/>
+                            <img src="img/fig4.png" class="img-fluid" style="max-width: 100%;"/>
                         </div>
                         <small class="text-muted">
-                             We train multiple models in a controlled setting and see that models slot-identify if they minimize both training objectives (left) and that  compositionality is implicitly satisfied (right).
+                             xxxx
                         </small>
                     </div>
                 </div>
@@ -321,22 +299,13 @@
                 <div class="row mt-2 row-dense">
                     <div class="col-12">
                         <p>
-                            The popular object-centric method <a href="https://arxiv.org/abs/2006.15055" target="_blank" data-toggle="tooltip" title data-original-title="Locatello et al. 2020. Object-Centric Learning with Slot Attention">Slot Attention</a> fails to generalize compositionally <out-of-the-box class=""></out-of-the-box>
-                            Given our theoretical insights, we can understand what's going wrong.
-                        </p>
-                        <p>
-                            First, its decoder is not additive since it uses a softmax operation across slots.
-                            Therefore, the decoder does not generalize.
-                            Replacing the softmax with a slot-wise sigmoid fixes this issue.
-                        </p>
-                        <p>
-                            Second, as with a vanilla autoencoder, we need to add our compositional consistency training objective to enable the whole model to generalize.
+                            Our results challenge the conventional wisdom that architecture is the key determinant of LLM performance. Instead, they indicate that models trained on the same datasets tend to converge toward similar scaling behaviors, regardless of whether they are transformer-based or use alternative architectures. This raises fundamental questions about the role of inductive biases in different model designs and suggests that most performance gains may come from better data selection rather than novel architectures. Additionally, our findings imply that computational resources can be allocated more efficiently by focusing on dataset improvements rather than model complexity. Ultimately, this shift in perspective has broad implications for both academia and industry, suggesting that future advancements in LLMs may depend more on data curation than on architectural innovation.
                         </p>
                         <div class="d-flex justify-content-center">
-                            <img src="img/fig5_v11.svg" class="img-fluid" style="max-width: 100%;"/>
+                            <img src="img/fig5.png" class="img-fluid" style="max-width: 100%;"/>
                         </div>
                         <small class="text-muted">
-                            Slot Attention fails to generalize compositionally out-of-the-box, but modifying it to satisfy additivity and training with the compositional consistency loss alleviates this.
+                            xxxx
                         </small>
                     </div>
                 </div>
@@ -408,3 +377,4 @@
 </html>
 
 </html>
+

@@ -26,7 +26,7 @@
     <meta property="twitter:title" content="LLMs on the Line: Data Determines Loss-To-Loss Scaling Laws">
     <meta property="twitter:description"
         content="Scaling laws guide the development of large language models (LLMs) by offering estimates for the optimal balance of model size, tokens, and compute. More recently, loss-to-loss scaling laws that relate losses across pretraining datasets and downstream tasks have emerged as a powerful tool for understanding and improving LLM performance. In this work, we investigate which factors most strongly influence loss-to-loss scaling. Our experiments reveal that the pretraining data and tokenizer determine the scaling trend. In contrast, model size, optimization hyperparameters, and even significant architectural differences, such as between transformer-based models like Llama and state-space models like Mamba, have limited impact. Consequently, practitioners should carefully curate suitable pretraining datasets for optimal downstream performance, while architectures and other settings can be freely optimized for training efficiency.">
-    <meta property="twitter:image" content="https://brendel-group.github.io/llm-line/img/fig1.png">
+    <meta property="twitter:image" content="https://brendel-group.github.io/llm-line/img/fig.pdf">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -241,7 +241,7 @@
                             Further, we put our observations in the context of downstream scaling laws and discuss the relationship between loss-to-loss and compute-to-loss scaling laws. Our results indicate that different LLM architectures might encode very similar inductive biases, freeing practitioners to optimize architectures for training efficiency without adversely affecting downstream scaling laws.
                         </p>
                         <div class="d-flex justify-content-center">
-                            <img src="img/fig1.png" class="img-fluid" style="max-width: 100%;"/>
+                            <img src="img/fig.pdf" class="img-fluid" style="max-width: 100%;"/>
                         </div>
                         <small class="text-muted">
                             <p>

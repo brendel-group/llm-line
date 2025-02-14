@@ -5,12 +5,6 @@ Official code to reproduce the results and data presented in the paper [LLMs on 
   <img src="https://brendel-group.github.io/llm-line/img/fig1.png"/>
 </p>
 
-
-## Requirements
-- Python 3.10
-- CUDA 11.7
-- CUDNN 8.4.1
-
 ## Repository Structure
 - `main.py`: Main evaluation script for huggingface models
 - `config.py`: Configuration handling and argument parsing
@@ -40,6 +34,12 @@ source ~/.llm_line/bin/activate
 ```
 
 4. Install dependencies:
+Basic requirements:
+- Python 3.10
+- CUDA 11.7
+- CUDNN 8.4.1
+
+Then install the rest of the dependencies:
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt

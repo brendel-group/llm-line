@@ -138,7 +138,8 @@
                     <div class="col-sm-4 mb-4">
                         Sayak Mallick
                         <a href="mailto:sayak.mallick@gmail.com"><i class="far fa-envelope"></i></a>
-                        University of Tübingen, MPI-IS, TÜbingen AI Center
+                        <a href="https://x.com/prasannamayil"><i class="fab fa-x-twitter"></i></a><br>
+                        University of Tübingen, MPI-IS, Tübingen AI Center
                     </div>
                     <div class="col-sm-4 mb-4">
                         Matthias Bethge
@@ -176,7 +177,7 @@
                     <p>
                         <b>tl;dr:</b>
                         <span class="text-muted">
-                            We find that loss-to-loss scaling trends depend on pretraining data and tokenizer, not model size, optimization, or even significant architectural differences.
+                            We find that loss-to-loss scaling laws depend on pretraining data and tokenizer, not model size, optimization, or even significant architectural differences.
                         </span>
                     </p>
                 </div>
@@ -208,13 +209,10 @@
                 <div class="row mt-2">
                     <h3>Abstract</h3>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-12 collapse-container">
-                        <p class="collapse" id="abstractText" aria-expanded="true">
-                            Scaling laws guide the development of large language models (LLMs) by offering estimates for the optimal balance of model size, tokens, and compute. More recently, loss-to-loss scaling laws that relate losses across pretraining datasets and downstream tasks have emerged as a powerful tool for understanding and improving LLM performance. In this work, we investigate which factors most strongly influence loss-to-loss scaling. Our experiments reveal that the pretraining data and tokenizer determine the scaling trend. In contrast, model size, optimization hyperparameters, and even significant architectural differences, such as between transformer-based models like Llama and state-space models like Mamba, have limited impact. Consequently, practitioners should carefully curate suitable pretraining datasets for optimal downstream performance, while architectures and other settings can be freely optimized for training efficiency.
-                        </p>
-                       <a role="button" id="moreless" class="collapsed" data-toggle="collapse" href="#abstractText" aria-expanded="true" aria-controls="abstractText"></a>
-                    </div>
+                <div class="row">
+                    <p>
+                        Scaling laws guide the development of large language models (LLMs) by offering estimates for the optimal balance of model size, tokens, and compute. More recently, loss-to-loss scaling laws that relate losses across pretraining datasets and downstream tasks have emerged as a powerful tool for understanding and improving LLM performance. In this work, we investigate which factors most strongly influence loss-to-loss scaling. Our experiments reveal that the pretraining data and tokenizer determine the scaling trend. In contrast, model size, optimization hyperparameters, and even significant architectural differences, such as between transformer-based models like Llama and state-space models like Mamba, have limited impact. Consequently, practitioners should carefully curate suitable pretraining datasets for optimal downstream performance, while architectures and other settings can be freely optimized for training efficiency.
+                    </p>
                 </div>
 
                 <div class="row mt-2">
@@ -223,22 +221,16 @@
                 <div class="row mt-2 row-dense">
                     <div class="col-12">
                         <p>
-                            We make three main observations, illustrated in Fig. 1:
-                                1. LLMs’ loss-to-loss scaling consistently follows shifted power laws.
-                                2. Pretraining data and tokenizer are the most salient factors for these scaling laws.
-                                3. In contrast, architecture plays a minor role, while model size, context length, and optimizer settings have negligible impact on loss-to-loss scaling.
+                            We make three main observations (illustrated in the figure below):
                         </p>
-                        <p>   
-                            Further, we put our observations in the context of downstream scaling laws and discuss the relationship between loss-to-loss and compute-to-loss scaling laws. Our results indicate that different LLM architectures might encode very similar inductive biases, freeing practitioners to optimize architectures for training efficiency without adversely affecting downstream scaling laws.
-                        </p>
+                        <ol>
+                            <li>LLMs' loss-to-loss scaling consistently follows shifted power laws.</li>
+                            <li>Pretraining data and tokenizer are the most salient factors for these scaling laws.</li>
+                            <li>In contrast, architecture plays a minor role, while model size, context length, and optimizer settings have negligible impact on loss-to-loss scalin trends.</li>
+                        </ol>
                         <div class="d-flex justify-content-center">
                             <img src="img/fig1.png" class="img-fluid" style="max-width: 100%;"/>
                         </div>
-                        <small class="text-muted">
-                            <p>
-                                xxxx
-                            </p>
-                        </small>
                     </div>
                 </div>
 
@@ -248,7 +240,7 @@
                 <div class="row mt-2 row-dense">
                     <div class="col-12">
                         <p>
-                            Our study investigates how different design choices impact loss-to-loss scaling laws in LLMs. Using over 6,000 model checkpoints, we conduct controlled interventions by varying factors such as pretraining data, tokenizer, architecture, model size, and optimization settings. By analyzing the resulting changes in train-to-test loss scaling, we uncover key insights into what truly drives downstream performance. Contrary to expectations, we find that pretraining dataset composition has the most significant impact, while even major architectural differences—such as switching from transformers to state-space models—yield minimal changes in scaling behavior. These findings suggest that rather than focusing on new model architectures, researchers and practitioners should prioritize refining pretraining data selection to achieve optimal performance.
+                            Our study investigates how different design choices impact loss-to-loss scaling laws in LLMs. Using over 6,000 model configurations, we conduct controlled interventions by varying factors such as pretraining data, tokenizer, architecture, model size, and optimization settings. By analyzing the resulting changes in loss-to-loss scaling laws, we uncover key insights into what truly drives them. 
                         </p>
                         <div class="d-flex justify-content-center">
                             <img src="img/fig2.png" class="img-fluid" style="max-width: 100%;"/>
@@ -261,7 +253,7 @@
 
 
                 <div class="row mt-2">
-                    <h3>What does this look like in practice?</h3>
+                    <h3>What does this imply?</h3>
                 </div>
                 <div class="row mt-2 row-dense">
                     <div class="col-12">
@@ -277,41 +269,15 @@
                         <div class="d-flex justify-content-center">
                             <img src="img/fig4.png" class="img-fluid" style="max-width: 100%;"/>
                         </div>
-                        <small class="text-muted">
-                             xxxx
-                        </small>
                     </div>
                 </div>
-
-
-                <div class="row mt-2">
-                    <h3>What does this imply?</h3>
-                </div>
-                <div class="row mt-2 row-dense">
-                    <div class="col-12">
-                        <p>
-                            Our results challenge the conventional wisdom that architecture is the key determinant of LLM performance. Instead, they indicate that models trained on the same datasets tend to converge toward similar scaling behaviors, regardless of whether they are transformer-based or use alternative architectures. This raises fundamental questions about the role of inductive biases in different model designs and suggests that most performance gains may come from better data selection rather than novel architectures. Additionally, our findings imply that computational resources can be allocated more efficiently by focusing on dataset improvements rather than model complexity. Ultimately, this shift in perspective has broad implications for both academia and industry, suggesting that future advancements in LLMs may depend more on data curation than on architectural innovation.
-                        </p>
-                        <div class="d-flex justify-content-center">
-                            <img src="img/fig6.png" class="img-fluid" style="max-width: 100%;"/>
-                        </div>
-                        <small class="text-muted">
-                            xxxx
-                        </small>
-                    </div>
-                </div>
-
                 <div class="row">
                     <h3>Acknowledgements & Funding</h3>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-12 collapse-container">
-                        <p class="collapse" id="acknowledgmentsText" aria-expanded="false">
-                            We thank (in alphabetical order): xxxxxx
-                            The authors thank the <a href="https://imprs.is.mpg.de/" target="_blank">International Max Planck Research School for Intelligent Systems (IMPRS-IS)</a> for supporting TW and AJ.
-                        </p>
-                       <a role="button" id="moreless" class="collapsed" data-toggle="collapse" href="#acknowledgmentsText" aria-expanded="false" aria-controls="acknowledgmentsText"></a>
-                    </div>
+                    <p>
+                        We would like to thank (in alphabetical order) Ameya Prabhu, Attila Juhos, Evgenia Rusak, Fanfei Li, Jack Brady, Thomas Klein, and Vishaal Udandarao for helpful discussions and feedback. This work was supported by the German Federal Ministry of Education and Research (BMBF): Tübingen AI Center, FKZ: 01IS18039A. WB acknowledges financial support via an Emmy Noether Grant funded by the German Research Foundation (DFG) under grant no. BR 6382/1-1 and via the Open Philantropy Foundation funded by the Good Ventures Foundation. WB is a member of the Machine Learning Cluster of Excellence, EXC number 2064/1 – Project number 390727645. This research utilized compute resources at the Tübingen Machine Learning Cloud, DFG FKZ INST 37/1057-1 FUGG. We thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting PM and TW.
+                    </p>
                 </div>
                 <div class="row">
                     <h3>BibTeX</h3>
@@ -322,10 +288,10 @@
                 <div class="row justify-content-md-center">
                     <div class="col-sm-12 rounded p-3 m-2" style="background-color:lightgray;">
                         <small class="code">
-                            @inproceedings{wiedemer2024provable,<br>
+                            @inproceedings{mayilvahanan2025llmsline,<br>
                                 &nbsp;&nbsp;title={xxxxx},<br>
                                 &nbsp;&nbsp;author={<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;Thadd{\"a}us Wiedemer and Jack Brady and Alexander Panfilov and Attila Juhos and Matthias Bethge and Wieland Brendel<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Prasanna Mayilvahanan and Thadd{\"a}us Wiedemer and Sayak Mallick and Matthias Bethge and Wieland Brendel<br>
                                 &nbsp;&nbsp;},<br>
                                 &nbsp;&nbsp;booktitle={xxxx},<br>
                                 &nbsp;&nbsp;year={2024},<br>
@@ -366,6 +332,3 @@
 </body>
 
 </html>
-
-</html>
-

@@ -225,7 +225,9 @@
                         </p>
                         <ol>
                             <li>LLMs' loss-to-loss scaling consistently follows shifted power laws.</li>
+                            <br>
                             <li>Pretraining data and tokenizer are the most salient factors for these scaling laws.</li>
+                            <br>
                             <li>In contrast, architecture plays a minor role, while model size, context length, and optimizer settings have negligible impact on loss-to-loss scalin trends.</li>
                         </ol>
                         <div class="d-flex justify-content-center">
@@ -242,12 +244,6 @@
                         <p>
                             Our study investigates how different design choices impact loss-to-loss scaling laws in LLMs. Using over 6,000 model configurations, we conduct controlled interventions by varying factors such as pretraining data, tokenizer, architecture, model size, and optimization settings. By analyzing the resulting changes in loss-to-loss scaling laws, we uncover key insights into what truly drives them. 
                         </p>
-                        <div class="d-flex justify-content-center">
-                            <img src="img/fig2.png" class="img-fluid" style="max-width: 100%;"/>
-                        </div>
-                        <ol>
-                            xxxx    
-                        </ol>
                     </div>
                 </div>
 
@@ -260,15 +256,6 @@
                         <p>
                             Traditionally, LLM development has placed heavy emphasis on architectural improvements and model scaling strategies. However, our research demonstrates that even drastically different architectures, such as LLaMA (a transformer-based model) and Mamba (a state-space model), exhibit nearly identical loss-to-loss scaling when trained on the same data. Meanwhile, changing the pretraining dataset leads to significant shifts in the scaling behavior, meaning that dataset curation is a far more influential lever for improving downstream performance. These insights suggest that practitioners should rethink their optimization strategies—prioritizing high-quality, well-curated datasets over iterative model modifications.
                         </p>
-                        <div class="d-flex justify-content-center">
-                            <img src="img/fig4.png" class="img-fluid" style="max-width: 100%;"/>
-                        </div>
-                        <small class="text-muted">
-                            xxxx
-                        </small>
-                        <div class="d-flex justify-content-center">
-                            <img src="img/fig4.png" class="img-fluid" style="max-width: 100%;"/>
-                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -289,9 +276,9 @@
                     <div class="col-sm-12 rounded p-3 m-2" style="background-color:lightgray;">
                         <small class="code">
                             @inproceedings{mayilvahanan2025llmsline,<br>
-                                &nbsp;&nbsp;title={xxxxx},<br>
+                                &nbsp;&nbsp;title={LLMs on the Line: Data Determines Loss-To-Loss Scaling Laws},<br>
                                 &nbsp;&nbsp;author={<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;Prasanna Mayilvahanan and Thadd{\"a}us Wiedemer and Sayak Mallick and Matthias Bethge and Wieland Brendel<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Prasanna Mayilvahanan and Thaddäus Wiedemer and Sayak Mallick and Matthias Bethge and Wieland Brendel<br>
                                 &nbsp;&nbsp;},<br>
                                 &nbsp;&nbsp;booktitle={xxxx},<br>
                                 &nbsp;&nbsp;year={2024},<br>
